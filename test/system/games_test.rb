@@ -14,8 +14,10 @@ class GamesTest < ApplicationSystemTestCase
     visit games_url
     click_on "New Game"
 
+    fill_in "Company", with: @game.company
     fill_in "Company", with: @game.company_id
     fill_in "Description", with: @game.description
+    fill_in "Farnchise", with: @game.farnchise
     fill_in "Initial price", with: @game.initial_price
     fill_in "Rating", with: @game.rating
     fill_in "Title", with: @game.title
@@ -29,8 +31,10 @@ class GamesTest < ApplicationSystemTestCase
     visit games_url
     click_on "Edit", match: :first
 
+    fill_in "Company", with: @game.company
     fill_in "Company", with: @game.company_id
     fill_in "Description", with: @game.description
+    fill_in "Farnchise", with: @game.farnchise
     fill_in "Initial price", with: @game.initial_price
     fill_in "Rating", with: @game.rating
     fill_in "Title", with: @game.title

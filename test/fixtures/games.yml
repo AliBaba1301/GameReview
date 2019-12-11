@@ -6,6 +6,8 @@ one:
   initial_price: 1.5
   rating: MyString
   company_id: 1
+  company: MyString
+  farnchise: MyString
 
 two:
   title: MyString
@@ -13,3 +15,5 @@ two:
   initial_price: 1.5
   rating: MyString
   company_id: 1
+  company: MyString
+  farnchise: MyString
