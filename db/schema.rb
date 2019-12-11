@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_11_195745) do
+ActiveRecord::Schema.define(version: 2019_12_11_200452) do
 
   create_table "games", force: :cascade do |t|
     t.string "title"
@@ -18,9 +18,10 @@ ActiveRecord::Schema.define(version: 2019_12_11_195745) do
     t.float "initial_price"
     t.string "rating"
     t.integer "company_id"
+    t.string "company"
+    t.string "farnchise"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "franchise_id"
   end
 
 end
