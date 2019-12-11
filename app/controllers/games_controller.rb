@@ -1,5 +1,8 @@
 class GamesController < ApplicationController
   before_action :set_game, only: [:show, :edit, :update, :destroy]
+  
+  # Stops users that are not signed in from adding games and reviews. It instead reroutes them to sign up 
+  before_action :authenticate_user!, except: [:index,:show] 
 
   # GET /games
   # GET /games.json
@@ -14,7 +17,7 @@ class GamesController < ApplicationController
 
   # GET /games/new
   def new
-    @game = Game.new
+    @game = current_user.game.build
   end
 
   # GET /games/1/edit
@@ -24,7 +27,7 @@ class GamesController < ApplicationController
   # POST /games
   # POST /games.json
   def create
-    @game = Game.new(game_params)
+    @game = current_user.game.build(game_params)
 
     respond_to do |format|
       if @game.save
@@ -69,6 +72,6 @@ class GamesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def game_params
-      params.require(:game).permit(:title, :description, :initial_price, :rating, :company_id, :company, :farnchise)
+      params.require(:game).permit(:title, :description, :initial_price, :rating, :company, :farnchise)
     end
 end
