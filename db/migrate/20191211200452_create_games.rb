@@ -7,7 +7,7 @@ class CreateGames < ActiveRecord::Migration[5.2]
       t.string :rating
       t.integer :company_id
       t.string :company
-      t.string :farnchise
+      t.string :franchise
 
       t.timestamps
     end

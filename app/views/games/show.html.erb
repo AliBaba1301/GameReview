@@ -1,5 +1,4 @@
-<p id="notice"><%= notice %></p>
-
+<%= image_tag @game.image.url(:medium)%>
 <p>
   <strong>Title:</strong>
   <%= @game.title %>
@@ -26,9 +25,15 @@
 </p>
 
 <p>
-  <strong>Farnchise:</strong>
-  <%= @game.farnchise %>
+  <strong>Franchise:</strong>
+  <%= @game.franchise %>
 </p>
+
+<p>
+  <strong>Platforms:</strong>
+  <%= @game.platforms %>
+</p>
+
 
 <%= link_to 'Edit', edit_game_path(@game) %> |
 <%= link_to 'Back', games_path %>
