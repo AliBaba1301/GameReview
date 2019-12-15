@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   
   
+  resources :comments
   devise_for :users
   resources :games do
     collection do
@@ -9,6 +10,8 @@ Rails.application.routes.draw do
     end
   resources :reviews, except: [:show, :index]
   end
+  get 'contact', to:'home#contact'
+  post 'request_contact', to: 'home#request_contact'
   resources :games
 
   root 'games#index'

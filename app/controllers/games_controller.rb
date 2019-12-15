@@ -4,6 +4,7 @@ class GamesController < ApplicationController
   # Stops users that are not signed in from adding games and reviews. It instead reroutes them to sign up 
   before_action :authenticate_user!, except: [:index,:show] 
 
+
   # GET /games
   # GET /games.json
   def index

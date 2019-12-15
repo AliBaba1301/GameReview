@@ -30,4 +30,21 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  contact: 
+    title: Contact Us
+    contact_us: Please fill in the form to get in touch
+    
+    name: "Name:"
+    enter_name: Enter your name 
+    email: "Email:"
+    enter_email: Enter your email address
+    telephone: "Telephone:"
+    enter_telephone: Enter your telephone number
+    message: "Message:"
+    enter_message: What do you want to say?
+    submit: Contact Us
+    
+  request_contact:
+    no_email: "Please enter youre email so we can get back to you"
+    email_sent: "Well get back to you as soon as we can :)"
+
