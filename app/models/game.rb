@@ -1,4 +1,5 @@
 class Game < ApplicationRecord
+    searchkick
     belongs_to :user
     has_many :review
     has_attached_file :image, styles: { medium: "400x600#"}, default_url: "/images/:style/missing.png"

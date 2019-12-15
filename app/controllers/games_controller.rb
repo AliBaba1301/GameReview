@@ -16,6 +16,14 @@ class GamesController < ApplicationController
     @reviews = Review.where(game_id: @game.id).order("created_at DESC")
   end
 
+  def search
+    if  params[:search].present?
+      @games = Game.search(params[:search])
+    else
+      @games = Game.all
+    end
+  end
+
   # GET /games/new
   def new
     @game = current_user.game.build

@@ -24,6 +24,9 @@ gem 'jquery-rails'
 #Used for attaching pictures to active records
 gem 'paperclip', '~> 6.1'
 
+#Used for seach function
+gem 'searchkick', '~> 4.1', '>= 4.1.1'
+
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby

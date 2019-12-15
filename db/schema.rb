@@ -10,14 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_14_225337) do
+ActiveRecord::Schema.define(version: 2019_12_15_023012) do
 
   create_table "games", force: :cascade do |t|
     t.string "title"
     t.text "description"
     t.float "initial_price"
     t.string "rating"
-    t.integer "company_id"
     t.string "company"
     t.string "franchise"
     t.datetime "created_at", null: false
