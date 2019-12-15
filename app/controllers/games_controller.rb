@@ -13,6 +13,7 @@ class GamesController < ApplicationController
   # GET /games/1
   # GET /games/1.json
   def show
+    @reviews = Review.where(game_id: @game.id).order("created_at DESC")
   end
 
   # GET /games/new

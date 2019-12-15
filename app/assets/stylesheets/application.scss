@@ -13,3 +13,17 @@
  *= require_tree .
  *= require_self
  */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body {
+    background-image: url("https://www.ledgerinsights.com/wp-content/uploads/2019/09/video-gaming-810x476.png");
+    
+  }
+ .navbar{   
+   background-color:ghostwhite; 
+   opacity: 0.75;
+}
+
+

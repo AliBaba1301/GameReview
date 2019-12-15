@@ -17,6 +17,10 @@ gem 'uglifier', '>= 1.3.0'
 #Used for user authentication
 gem 'devise', '~> 4.7', '>= 4.7.1' 
 
+#Used for tidying up home page
+gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
+gem 'jquery-rails'
+
 #Used for attaching pictures to active records
 gem 'paperclip', '~> 6.1'
 

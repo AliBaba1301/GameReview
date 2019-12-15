@@ -1,39 +1,100 @@
-<%= image_tag @game.image.url(:medium)%>
-<p>
-  <strong>Title:</strong>
-  <%= @game.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @game.description %>
-</p>
-
-<p>
-  <strong>Initial Price:</strong>
-  <%= @game.initial_price %>
-</p>
-
-<p>
-  <strong>Age Rating:</strong>
-  <%= @game.rating %>
-</p>
-
-<p>
-  <strong>Company:</strong>
-  <%= @game.company %>
-</p>
-
-<p>
-  <strong>Franchise:</strong>
-  <%= @game.franchise %>
-</p>
-
-<p>
-  <strong>Platforms:</strong>
-  <%= @game.platforms %>
-</p>
-
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="row">
+     <div class="col-md-4">
+        <%= image_tag @game.image.url(:medium)%>
+        <div class="table-responsive">
+          <table class="table">
+             <tbody>
+              <tr>
+                <td>
+                  <strong>Title:</strong>
+                </td>
+                <td>
+                  <%= @game.title %>
+                </td>
+              </tr>
+               <tr>
+                <td>
+                  <strong>Description:</strong>
+                </td>
+                <td>
+                    <%= @game.description %>
+                </td>
+              </tr>
+                <tr>
+                <td>
+                  <strong>Initial Price:</strong>
+                </td>
+                <td>
+                   <%= @game.initial_price %>
+                </td>
+              </tr>
+                <tr>
+                <td>
+                 <strong>Age Rating:</strong>
+                </td>
+                <td>
+                   <%= @game.rating %>
+                </td>
+              </tr>
+                <tr>
+                <td>
+                  <strong>Company:</strong>
+                </td>
+                <td>
+                    <%= @game.company %>
+                </td>
+              </tr>
+                <tr>
+                <td>
+                  <strong>Franchise:</strong>
+                </td>
+                <td>
+                    <%= @game.franchise %>
+                </td>
+              </tr>
+                <tr>
+                <td>
+                  <strong>Platforms:</strong>
+                </td>
+                <td>
+                    <%= @game.platforms %>
+                </td>
+              </tr>
+             </tbody>
+          </table>
+          <%= link_to "Write a Review", new_game_review_path(@game) %>
+        </div>
+      </div>
+      <div class="col-md-7 col-md-offset-1">
+        <h1 class="review_title"><%= @game.title%></h1>
+        <h4><%= @game.description %></h4>
+        <%if @reviews.blank?%>
+            <h2> No reviews at the moment, how about you get the ball rolling</h2>
+            <%= link_to "Write Review", new_game_review_path(@game),class: "btn"%>
+          <%else%>
+            <% @reviews.each do |review|%>
+            <div class="reviews">
+            <table class="table">
+             <tbody>
+              <tr>
+              <%if review.rating > 5%>
+                <% review.rating = 5 %>
+              <% end %>
+                <td><p><%= review.rating %> Stars</p></td>
+                <td> <p><%= review.review_body %></p></td>
+              </tr>
+            </tbody>
+          </table>
+            
+            </div>
+          <%end%>
+        <%end%>
+      </div>
+    </div>
+  </div>
+</div>
 
 <%= link_to 'Edit', edit_game_path(@game) %> |
 <%= link_to 'Back', games_path %>

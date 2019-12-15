@@ -10,48 +10,90 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :initial_price %>
-    <%= form.text_field :initial_price %>
-  </div>
-
-  <div class="field">
-    <%= form.label :age_rating %>
-    <%= form.text_field :rating %>
-  </div>
-
-  <div class="field">
-    <%= form.label :company %>
-    <%= form.text_field :company %>
-  </div>
-
-  <div class="field">
-    <%= form.label :franchise %>
-    <%= form.text_field :franchise %>
-  </div>
-
-  <div class="field">
-  <%= form.label :platforms %>
-  <%= form.text_field :platforms %>
-</div>
-
-<div class="field">
-<%= form.label :image %>
-<%= form.file_field :image %>
-</div>
-
-  <div class="actions">
-    <%= form.submit %>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div class="row">
+        <div class="table-responsive">
+          <table class="table">
+              <tbody>
+              <tr>
+                <h1>New Game</h1>
+              </tr>
+              <tr>
+                <td>
+                  <div class="field">
+                    <%= form.label :title %>
+                    <%= form.text_field :title %>
+                  </div>
+                </td>
+              </tr>
+                <tr>
+                <td>
+                  <div class="field">
+                    <%= form.label :description %>
+                    <%= form.text_area :description %>
+                  </div>
+                </td>
+              </tr>
+                <tr>
+                <td>
+                  <div class="field">
+                    <%= form.label :initial_price %>
+                    <%= form.text_field :initial_price %>
+                  </div>
+                </td>
+              </tr>
+                <tr>
+                <td>
+                  <div class="field">
+                    <%= form.label :age_rating %>
+                    <%= form.text_field :rating %>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="field">
+                    <%= form.label :company %>
+                    <%= form.text_field :company %>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="field">
+                    <%= form.label :franchise %>
+                    <%= form.text_field :franchise %>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="field">
+                    <%= form.label :platforms%>
+                    <%= form.text_field :platforms %>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="field">
+                    <%= form.label :image %>
+                    <%= form.file_field :image %>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+              <td>
+                  <div class="actions">
+                    <%= form.submit %>
+                  </div>
+                </td>
+              </tr>
+              </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
   </div>
 <% end %>
