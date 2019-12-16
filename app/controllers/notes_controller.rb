@@ -1,6 +1,6 @@
 class NotesController < ApplicationController
   before_action :set_note, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  before_action :authenticate_user! # Stops users that are not signed in from adding notes
 
   # GET /notes
   # GET /notes.json
@@ -26,7 +26,7 @@ class NotesController < ApplicationController
   # POST /notes.json
   def create
     @note = Note.new(note_params)
-    @note.user_id = current_user.id
+    @note.user_id = current_user.id #assigns the user id to the note thereby associating each not to a user
 
     respond_to do |format|
       if @note.save

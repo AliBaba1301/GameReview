@@ -3,7 +3,9 @@
 one:
   rating: 1
   review_body: MyText
+  game_id: 1
 
 two:
   rating: 4
   review_body: MyText
+  game_id: 1

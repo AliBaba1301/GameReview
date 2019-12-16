@@ -19,13 +19,13 @@ gem 'devise', '~> 4.7', '>= 4.7.1'
 
 #Used for tidying up home page
 gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
-gem 'jquery-rails'
 
 #Used for attaching pictures to active records
 gem 'paperclip', '~> 6.1'
 
 #Used for seach function
 gem 'searchkick', '~> 4.1', '>= 4.1.1'
+gem 'jquery-rails', '~> 4.3', '>= 4.3.5'
 
 
 # See https://github.com/rails/execjs#readme for more supported runtimes

@@ -6,6 +6,7 @@ end
 def contact
 end
 
+#used to deal with contact requests put through the mailer
 def request_contact
   name = params[:name]
   email = params[:email]

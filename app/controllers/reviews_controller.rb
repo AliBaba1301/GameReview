@@ -18,14 +18,14 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     @review.user_id = current_user.id
-    @review.game_id = @game.id
+    @review.game_id = @game.id # sets game_id equal to the id of the current game
 
     respond_to do |format|
       if @review.save
         format.html { redirect_to @game, notice: 'Review was successfully created.' }
         format.json { render :show, status: :created, location: @game }
       else
-        format.html { render :new }
+        format.html { redirect_to new_game_review_path }
         format.json { render json: @review.errors, status: :unprocessable_entity }
       end
     end
@@ -49,7 +49,11 @@ class ReviewsController < ApplicationController
   # DELETE /reviews/1.json
   def destroy
     @review.destroy
-    redirect_to game_path(@game)
+    respond_to do |format|
+      format.html { redirect_to root_path, notice: 'Note was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+    
   end
 
 
@@ -61,7 +65,7 @@ class ReviewsController < ApplicationController
     end
 
     def set_game
-      @game = Game.find(params[:game_id])
+      @game = Game.find(params[:game_id])# finds the game the review is for
     end
 
 
