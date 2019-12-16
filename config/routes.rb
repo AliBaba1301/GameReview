@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   
   
   resources :notes
-  resources :comments
   devise_for :users
   resources :games do
     collection do

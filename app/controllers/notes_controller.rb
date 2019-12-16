@@ -1,5 +1,6 @@
 class NotesController < ApplicationController
   before_action :set_note, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /notes
   # GET /notes.json
@@ -25,6 +26,8 @@ class NotesController < ApplicationController
   # POST /notes.json
   def create
     @note = Note.new(note_params)
+    @note.user_id = current_user.id
+
 
     respond_to do |format|
       if @note.save
@@ -66,7 +69,7 @@ class NotesController < ApplicationController
     def set_note
       @note = Note.find(params[:id])
     end
-
+    
     # Never trust parameters from the scary internet, only allow the white list through.
     def note_params
       params.require(:note).permit(:notes, :game_id)
