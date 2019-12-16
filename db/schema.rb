@@ -30,7 +30,6 @@ ActiveRecord::Schema.define(version: 2019_12_16_044910) do
   end
 
   create_table "notes", force: :cascade do |t|
-    t.integer "game_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "notes_taken"

@@ -1,8 +1,11 @@
 require 'test_helper'
 
 class NotesControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
   setup do
     @note = notes(:one)
+    @user = users(:one)
+    sign_in @user
   end
 
   test "should get index" do
@@ -17,7 +20,7 @@ class NotesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create note" do
     assert_difference('Note.count') do
-      post notes_url, params: { note: { game_id: @note.game_id, notes: @note.notes } }
+      post notes_url, params: { note: { game_id: @note.game_id, notes: @note.notes_taken } }
     end
 
     assert_redirected_to note_url(Note.last)
@@ -34,7 +37,7 @@ class NotesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update note" do
-    patch note_url(@note), params: { note: { game_id: @note.game_id, notes: @note.notes } }
+    patch note_url(@note), params: { note: { game_id: @note.game_id, notes: @note.notes_taken } }
     assert_redirected_to note_url(@note)
   end
 

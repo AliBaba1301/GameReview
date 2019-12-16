@@ -4,16 +4,17 @@ one:
   title: MyString
   description: MyText
   initial_price: 1.5
-  rating: MyString
-  company_id: 1
-  company: MyString
-  farnchise: MyString
+  rating: MyString1
+  company: MyString1
+  franchise: MyString1
+  platforms: MyString1
+  
 
 two:
-  title: MyString
-  description: MyText
+  title: MyString2
+  description: MyText2
   initial_price: 1.5
-  rating: MyString
-  company_id: 1
-  company: MyString
-  farnchise: MyString
+  rating: MyString2
+  company: MyString2
+  franchise: MyString2
+  platforms: MyString1
