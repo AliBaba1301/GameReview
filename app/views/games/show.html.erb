@@ -85,7 +85,9 @@
                 <% end %>
                   <td><p><%= review.rating %> Stars</p></td>
                   <td> <p><%= review.review_body %></p></td>
-                <td><%= link_to 'Delete', game_review_path(review.game_id, review) , method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                  <td><%= link_to 'Delete', game_review_path(review.game_id, review) , method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                  <td><%= link_to "Comment", new_comment_path(@reviews),class: "btn"%></td>
+                  <td><%= link_to "View Comments", comment_path(@reviews) ,class: "btn"%></td>
                 </tr>
               </tbody>
             </table>
