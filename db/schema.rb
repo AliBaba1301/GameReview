@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_16_040509) do
+ActiveRecord::Schema.define(version: 2019_12_16_044155) do
 
   create_table "games", force: :cascade do |t|
     t.string "title"
@@ -27,6 +27,13 @@ ActiveRecord::Schema.define(version: 2019_12_16_040509) do
     t.integer "image_file_size"
     t.datetime "image_updated_at"
     t.text "platforms"
+  end
+
+  create_table "notes", force: :cascade do |t|
+    t.integer "game_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "notes_taken"
   end
 
   create_table "reviews", force: :cascade do |t|
