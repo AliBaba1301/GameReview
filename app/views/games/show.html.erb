@@ -76,20 +76,21 @@
             <%= link_to "Write Review", new_game_review_path(@game),class: "btn"%>
           <%else%>
             <% @reviews.each do |review|%>
-            <div class="reviews">
-            <table class="table">
-             <tbody>
-              <tr>
-              <%if review.rating > 5%>
-                <% review.rating = 5 %>
-              <% end %>
-                <td><p><%= review.rating %> Stars</p></td>
-                <td> <p><%= review.review_body %></p></td>
-              </tr>
-            </tbody>
-          </table>
-            
-            </div>
+              <div class="reviews">
+              <table class="table">
+              <tbody>
+                <tr>
+                <%if review.rating > 5%>
+                  <% review.rating = 5 %>
+                <% end %>
+                  <td><p><%= review.rating %> Stars</p></td>
+                  <td> <p><%= review.review_body %></p></td>
+                <td><%= link_to 'Delete', game_review_path(review.game_id, review) , method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                </tr>
+              </tbody>
+            </table>
+              
+              </div>
           <%end%>
         <%end%>
       </div>

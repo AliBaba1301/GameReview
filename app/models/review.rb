@@ -1,4 +1,6 @@
 class Review < ApplicationRecord
-    belongs_to :user
+    has_one :user
     belongs_to :game
+
+    validates_presence_of :rating, :review_body
 end

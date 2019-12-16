@@ -50,8 +50,6 @@ class ReviewsController < ApplicationController
   def destroy
     @review.destroy
     redirect_to root_path
-   
-    
   end
 
 
@@ -71,4 +69,5 @@ class ReviewsController < ApplicationController
     def review_params
       params.require(:review).permit(:rating, :review_body)
     end
+
 end
