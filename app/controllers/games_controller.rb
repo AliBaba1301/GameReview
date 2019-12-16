@@ -58,7 +58,7 @@ class GamesController < ApplicationController
         format.html { redirect_to @game, notice: 'Game was successfully updated.' }
         format.json { render :show, status: :ok, location: @game }
       else
-        format.html { render :edit }
+        format.html { redirect_to games_path }
         format.json { render json: @game.errors, status: :unprocessable_entity }
       end
     end

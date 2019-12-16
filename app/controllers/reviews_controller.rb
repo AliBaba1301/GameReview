@@ -49,7 +49,7 @@ class ReviewsController < ApplicationController
   # DELETE /reviews/1.json
   def destroy
     @review.destroy
-    redirect_to root_path
+    redirect_to game_path(@game)
   end
 
 
